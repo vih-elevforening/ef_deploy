@@ -1,0 +1,7 @@
+core = "7.x"
+description = "Deploy module for Elevforeningen"
+name = "EF Deploy"
+package = "EF"
+project = "ef_deploy"
+version = "7.x-0.1"
+

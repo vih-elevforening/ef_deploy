@@ -1,0 +1,64 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ *
+ * See http://dcycleproject.org/node/43
+ */
+function ef_deploy_install() {
+  for ($i = 7000; $i < 8000; $i++) {
+    $candidate = 'ef_deploy_update_' . $i;
+    if (function_exists($candidate)) {
+      $candidate();
+    }
+  }
+}
+
+/**
+ * Setting up timezones.
+ */
+function ef_deploy_update_7000() {
+  variable_set('configurable_timezones', 0);
+  variable_set('date_first_day', 1);
+  variable_set('date_default_timezone', 'Europe/Copenhagen');
+}
+
+/**
+ * Setting upload to 5MB and skip scheme on upload.
+ */
+function ef_deploy_update_7001() {
+  variable_set('file_entity_max_filesize', '5 MB');
+  variable_set('file_entity_file_upload_wizard_skip_scheme', 1);
+}
+
+/**
+ * Settings for transliteration.
+ */
+function ef_deploy_update_7002() {
+  module_enable('transliteration');
+  if (module_exists('pathauto')) {
+    if (module_exists('transliteration')) {
+      variable_set('pathauto_transliterate', 1);
+    }
+    variable_set('pathauto_reduce_ascii', 1);
+  }
+}
+
+/**
+ * Disable Acquia modules and non-used Commons modules
+ */
+function ef_deploy_update_7003() {
+  module_disable(array('acquia_agent', 'acquia_spi'));
+  module_disable(array('commons_wikis_pages', 'commons_wikis'));
+  module_disable(array('commons_q_a_pages', 'commons_q_a'));
+}
+
+/**
+ * Enable Lingotek
+ */
+function ef_deploy_update_7004() {
+  module_enable(array('lingotek'));
+}
