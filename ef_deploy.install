@@ -38,7 +38,7 @@ function ef_deploy_update_7001() {
  * Settings for transliteration.
  */
 function ef_deploy_update_7002() {
-  module_enable('transliteration');
+  module_enable(array('transliteration'));
   if (module_exists('pathauto')) {
     if (module_exists('transliteration')) {
       variable_set('pathauto_transliterate', 1);
@@ -69,4 +69,11 @@ function ef_deploy_update_7004() {
 function ef_deploy_update_7005() {
   module_enable(array('ef_users'));
   module_enable(array('ef_events'));
+}
+
+/**
+ * Enable Commerce Billy
+ */
+function ef_deploy_update_7005() {
+  module_enable(array('commerce_billy', 'commerce_billy_pdf'));
 }

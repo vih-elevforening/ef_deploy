@@ -5,3 +5,5 @@ package = "EF"
 project = "ef_deploy"
 version = "7.x-0.1"
 
+dependencies[] = ef_users
+dependencies[] = ef_events
