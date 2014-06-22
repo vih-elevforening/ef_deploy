@@ -70,10 +70,3 @@ function ef_deploy_update_7005() {
   module_enable(array('ef_users'));
   module_enable(array('ef_events'));
 }
-
-/**
- * Enable Commerce Billy
- */
-function ef_deploy_update_7005() {
-  module_enable(array('commerce_billy', 'commerce_billy_pdf'));
-}
