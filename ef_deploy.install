@@ -70,3 +70,10 @@ function ef_deploy_update_7005() {
   module_enable(array('ef_users'));
   module_enable(array('ef_events'));
 }
+
+/**
+ * Enable Cart Expiration
+ */
+function ef_deploy_update_7006() {
+  module_enable(array('commerce_cart_expiration'));
+}
