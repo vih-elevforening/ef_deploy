@@ -77,3 +77,12 @@ function ef_deploy_update_7005() {
 function ef_deploy_update_7006() {
   module_enable(array('commerce_cart_expiration'));
 }
+
+/**
+ * Enable Commerce Billy and set auto invoice
+ */
+function ef_deploy_update_7007() {
+  module_enable(array('commerce_billy', 'commerce_billy_pdf'));
+  variable_set('commerce_billy_auto_invoice', TRUE);
+  drupal_flush_all_caches();
+}
