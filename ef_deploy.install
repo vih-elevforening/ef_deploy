@@ -86,3 +86,10 @@ function ef_deploy_update_7007() {
   variable_set('commerce_billy_auto_invoice', TRUE);
   drupal_flush_all_caches();
 }
+
+/**
+ * Enable EF Fond
+ */
+function ef_deploy_update_7008() {
+  module_enable(array('ef_fond'));
+}
