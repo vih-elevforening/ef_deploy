@@ -93,3 +93,10 @@ function ef_deploy_update_7007() {
 function ef_deploy_update_7008() {
   module_enable(array('ef_fond'));
 }
+
+/**
+ * Enable EF Commons
+ */
+function ef_deploy_update_7009() {
+  module_enable(array('ef_commons'));
+}
