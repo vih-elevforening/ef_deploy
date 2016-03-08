@@ -100,3 +100,10 @@ function ef_deploy_update_7008() {
 function ef_deploy_update_7009() {
   module_enable(array('ef_commons'));
 }
+
+/**
+ * Enable Commerce Google Analytics
+ */
+function ef_deploy_update_7010() {
+  module_enable(array('commerce_google_analytics'));
+}
